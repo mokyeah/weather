@@ -3,8 +3,9 @@ import { Icon } from "@iconify/react";
 import axios from 'axios';
 function App() {
 const [data, setdata] = useState("")
+const [type, settype] = useState("")
     useEffect(() => {
-    axios('https://api.weatherapi.com/v1/current.json?key=99dcc937cc0c4c0c80662236220110&q=Malaysia&aqi=no').then((e)=>{setdata(e.data)})
+    axios(`https://api.weatherapi.com/v1/current.json?key=99dcc937cc0c4c0c80662236220110&q=${type}&aqi=no`).then((e)=>{setdata(e.data)})
   }, [])
   
   return (
@@ -50,6 +51,7 @@ const [data, setdata] = useState("")
               />
 </div>
               <input
+              
                 type="text"
                 placeholder="Search"
                 className="w-full h-12 w-96 text-gray-500 rounded-md outline-none bg-gray-50 "
