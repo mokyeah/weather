@@ -3,10 +3,10 @@ import { Icon } from "@iconify/react";
 import axios from 'axios';
 function App() {
 const [data, setdata] = useState("")
-const [type, settype] = useState("")
+const [name, settype] = useState("London")
     useEffect(() => {
-    axios(`https://api.weatherapi.com/v1/current.json?key=99dcc937cc0c4c0c80662236220110&q=${type}&aqi=no`).then((e)=>{setdata(e.data)})
-  }, [])
+    axios(`https://api.weatherapi.com/v1/current.json?key=99dcc937cc0c4c0c80662236220110&q=${name}&aqi=no`).then((e)=>{setdata(e.data)})
+  }, [name])
   
   return (
     data && 
@@ -51,7 +51,8 @@ const [type, settype] = useState("")
               />
 </div>
               <input
-              
+              value={name}
+              onChange={(e)=>{settype(e.target.value)}}
                 type="text"
                 placeholder="Search"
                 className="w-full h-12 w-96 text-gray-500 rounded-md outline-none bg-gray-50 "
