@@ -80,7 +80,8 @@ function App() {
   return (
     data &&
     after && (
-      <div className="bg-slate-800 h-screen w-full flex items-center justify-center gap-4 gap-12 p-2 text-slate-50">
+      <div>      
+      <div className="hidden-mobile bg-slate-800 h-screen w-full flex items-center justify-center gap-4 gap-12 p-2 text-slate-50">
         <div className="inset-y-0 left-0 w-1/2 absolute flex-col flex">
           <div className="flex justify-center flex-col">
             <div className="text-5xl justify-center flex p-2  ">
@@ -133,7 +134,7 @@ function App() {
                       {after.forecast.forecastday[4].date}
                     </div>
                   </div>
-                  <div className="ml-8 flex flex-rol">
+                  <div className="fixed ml-8 flex flex-rol">
                     <img
                       src={after.forecast.forecastday[1].day.condition.icon}
                       className="h-16 w-16"
@@ -157,7 +158,7 @@ function App() {
           </div>
         </div>
 
-        <div className="justify-center w-1/2 h-screen p-3 flex absolute inset-y-0 right-0"> 
+        <div className="bg-slate-600 justify-center w-1/2 h-screen p-3 flex absolute inset-y-0 right-0"> 
          
           <div>
             <div>
@@ -189,13 +190,19 @@ function App() {
                   <div className="items-center justify-center flex">
                     MY FRIEND</div>
                   <div className="justify-center flex mt-10 text-6xl">{clock}</div>
+                  
                 </div>
               </div>
             </div>
           </div>
           </div>
-        
+        <div className="hidden-pc">hi</div>
       </div>
+      <div className=" h-screen w-full flex items-center justify-center">
+      <div className="text-5xl justify-center ">WORK IN PROGRESS</div>
+      </div>
+      </div>      
+
     )
   );
 }
