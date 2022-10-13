@@ -12,14 +12,14 @@ function App() {
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
-      setClock(date.toLocaleTimeString({ hourCycle: 'h12' }));
+      setClock(date.toLocaleTimeString({ hourCycle: "h12" }));
     });
   }, []);
 
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
-      setClock(date.toLocaleTimeString({ hourCycle: 'h12' }));
+      setClock(date.toLocaleTimeString({ hourCycle: "h12" }));
     });
   }, []);
 
@@ -80,129 +80,148 @@ function App() {
   return (
     data &&
     after && (
-      <div>      
-      <div className="hidden-mobile bg-slate-800 h-screen w-full flex items-center justify-center gap-4 gap-12 p-2 text-slate-50">
-        <div className="inset-y-0 left-0 w-1/2 absolute flex-col flex">
-          <div className="flex justify-center flex-col">
-            <div className="text-5xl justify-center flex p-2  ">
-              Weather App
-            </div>
-            <div className="text-1xl p-2"></div>
-
-            <div className="text-center text-4xl mt-16">
-              {data.location.name}
-            </div>
-            <div className="text-1xl mt- text-center">
-              {data.location.country}
-            </div>
-            <div className="pt-56">
-              <div className="text-4xl mb-8 justify-center flex  ">
-                {data.current.condition.text}
+      <div>
+        <div className="bg-slate-800 h-[100vh] w-full flex flex-row items-center justify-center gap-4 gap-12 p-2 text-slate-50">
+          <div className=" w-1/2 flex-col flex hidden-mobile bg-slate-800 h-[100vh] overflow-y-auto ">
+            <div className="flex justify-center flex-col">
+              <div className="text-5xl justify-center flex p-2  ">
+                Weather App
               </div>
-              <div className="mt-16 ">
-                <div className="flex flex-col">
-                  <div className="flex flex-row items-center pt-24">
-                    <img
-                      className="w-32 h-32 ml-10"
-                      src={data.current.condition.icon}
-                    ></img>
-                    <div className=" text-6xl ">{data.current.temp_c}°C</div>
-                    <div className="text-2xl -mt-8 ml-16 ">
-                      Humidity: {data.current.humidity}%
-                    </div>
-                    <div className="flex flex-col">
-                      <div className="text-2xl mt-14 -ml-40">Feels like:{data.current.feelslike_c}°C</div>
-                    </div>
-                 </div>
-                 
-                </div>
+              <div className="text-1xl p-2"></div>
 
-                <div className="h-1 w-full bg-white  mt-0.5 relative"></div>
-                <div className="text-3xl mt-6 justify-center flex">
-                  Weather Forecast
+              <div className="text-center text-4xl mt-16">
+                {data.location.name}
+              </div>
+              <div className="text-1xl mt- text-center">
+                {data.location.country}
+              </div>
+              <div className="mt-56">
+                <div className="text-4xl mb-8 justify-center flex  ">
+                  {data.current.condition.text}
                 </div>
-                <div className=" mt-6 ml-12 text-2xl">
-                  <div className="flex flex-rol">
-                    <div className="">{after.forecast.forecastday[1].date}</div>
-                    <div className="ml-28">
-                      {after.forecast.forecastday[2].date}
-                    </div>
-                    <div className="ml-28">
-                      {after.forecast.forecastday[3].date}
-                    </div>
-                    <div className="ml-28">
-                      {after.forecast.forecastday[4].date}
+                <div className="mt-16 ">
+                  <div className="flex flex-col">
+                    <div className="flex flex-row items-center mt-24">
+                      <img
+                        className="w-32 h-32 ml-10"
+                        src={data.current.condition.icon}
+                      ></img>
+                      <div className=" text-6xl ">{data.current.temp_c}°C</div>
+                      <div className="text-2xl -mt-8 ml-16 ">
+                        Humidity: {data.current.humidity}%
+                      </div>
+                      <div className="flex flex-col">
+                        <div className="text-2xl mt-14 -ml-40">
+                          Feels like:{data.current.feelslike_c}°C
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="fixed ml-8 flex flex-rol">
-                    <img
-                      src={after.forecast.forecastday[1].day.condition.icon}
-                      className="h-16 w-16"
-                    ></img>
-                    <img
-                      src={after.forecast.forecastday[2].day.condition.icon}
-                      className="ml-40 h-16 w-16"
-                    ></img>
-                    <img
-                      src={after.forecast.forecastday[3].day.condition.icon}
-                      className=" ml-44 h-16 w-16"
-                    ></img>
-                    <img
-                      src={after.forecast.forecastday[4].day.condition.icon}
-                      className="ml-44 h-16 w-16"
-                    ></img>
+
+                  <div className="h-1 w-full bg-white  mt-0.5"></div>
+                  <div className="text-3xl mt-6 justify-center flex">
+                    Weather Forecast
+                  </div>
+                  <div className="   mt-6 ml-12 text-2xl">
+                    <div className="flex flex-rol gap-[112px]">
+                      <div className="flex flex-col ">
+                        <div>{after.forecast.forecastday[1].date}</div>
+                        <div>
+                          <img
+                            src={
+                              after.forecast.forecastday[1].day.condition.icon
+                            }
+                            className="h-16 w-16"
+                          ></img>
+                        </div>
+                      </div>
+                      <div className="flex flex-col ">
+                        <div>{after.forecast.forecastday[2].date}</div>
+                        <div>
+                          <img
+                            src={
+                              after.forecast.forecastday[2].day.condition.icon
+                            }
+                            className="h-16 w-16"
+                          ></img>
+                        </div>
+                      </div>
+                      <div className="flex flex-col ">
+                        <div>{after.forecast.forecastday[3].date}</div>
+                        <div>
+                          <img
+                            src={
+                              after.forecast.forecastday[3].day.condition.icon
+                            }
+                            className="h-16 w-16"
+                          ></img>
+                        </div>
+                      </div>
+                      <div className="flex flex-col ">
+                        <div>{after.forecast.forecastday[4].date}</div>
+                        <div>
+                          <img
+                            src={
+                              after.forecast.forecastday[4].day.condition.icon
+                            }
+                            className="h-16 w-16"
+                          ></img>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-600 justify-center w-1/2 h-[100vh] p-3 flex hidden-mobile">
+            <div>
+              <div>
+                {" "}
+                <div className=" justify-center items-center flex flex-col">
+                  <div className="relative justify-center items-center flex">
+                    <div className="mt-10 bg-gray-50 h-12 justify-center flex rounded-md ">
+                      <button className="focus:bg-white focus:border-indigo-600 flex flex-rol items-center ">
+                        <div className=" rounded-md bg-gray-50 w-12 flex justify-center item-center">
+                          <Icon
+                            className=" w-6 h-6 my-auto text-gray-400 left-3"
+                            icon="ant-design:search-outlined"
+                          />
+                        </div>
+                        <input
+                          value={name}
+                          onChange={(e) => {
+                            settype(e.target.value);
+                          }}
+                          type="text"
+                          placeholder="Search"
+                          className="w-full h-12 w-96 text-gray-500 rounded-md outline-none bg-gray-50 "
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="text-8xl mt-36">
+                    <div className="">GOOD {time}</div>
+                    <div className="items-center justify-center flex">
+                      MY FRIEND
+                    </div>
+                    <div className="justify-center flex mt-10 text-6xl">
+                      {clock}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="hidden-pc">
+            hi
+            <div className=" h-screen w-full flex items-center justify-center">
+              <div className="text-5xl justify-center ">WORK IN PROGRESS</div>
             </div>
           </div>
         </div>
-
-        <div className="bg-slate-600 justify-center w-1/2 h-screen p-3 flex absolute inset-y-0 right-0"> 
-         
-          <div>
-            <div>
-              {" "}
-              <div className=" justify-center items-center flex flex-col">
-                <div className="relative justify-center items-center flex">
-                  <div className="mt-10 bg-gray-50 h-12 justify-center flex rounded-md ">
-                    <button className="focus:bg-white focus:border-indigo-600 flex flex-rol items-center ">
-                      <div className=" rounded-md bg-gray-50 w-12 flex justify-center item-center">
-                        <Icon
-                          className=" w-6 h-6 my-auto text-gray-400 left-3"
-                          icon="ant-design:search-outlined"
-                        />
-                      </div>
-                      <input
-                        value={name}
-                        onChange={(e) => {
-                          settype(e.target.value);
-                        }}
-                        type="text"
-                        placeholder="Search"
-                        className="w-full h-12 w-96 text-gray-500 rounded-md outline-none bg-gray-50 "
-                      />
-                    </button>
-                  </div>
-                </div>
-                <div className="text-8xl mt-36">
-                  <div className="">GOOD {time}</div>
-                  <div className="items-center justify-center flex">
-                    MY FRIEND</div>
-                  <div className="justify-center flex mt-10 text-6xl">{clock}</div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        <div className="hidden-pc">hi</div>
       </div>
-      <div className=" h-screen w-full flex items-center justify-center">
-      <div className="text-5xl justify-center ">WORK IN PROGRESS</div>
-      </div>
-      </div>      
-
     )
   );
 }
