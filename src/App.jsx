@@ -80,7 +80,7 @@ function App() {
     data &&
     after && (
       <div>
-        <div className="bg-slate-800 h-[100vh] w-full flex flex-row items-center justify-center gap-4 gap-12 p-2 text-slate-50">
+        <div className="bg-slate-800 h-[100vh] w-full flex flex-row items-center justify-center gap-4 gap-12 p-2 text-slate-50 ">
           <div className=" w-1/2 flex-col flex hidden-mobile bg-slate-800 h-[100vh] overflow-y-auto ">
             <div className="flex justify-center flex-col">
               <div className="text-5xl justify-center flex p-2  ">
@@ -106,14 +106,11 @@ function App() {
                         src={data.current.condition.icon}
                       ></img>
                       <div className=" text-6xl ">{data.current.temp_c}°C</div>
-                      <div className="text-2xl -mt-8 ml-16 ">
-                        Humidity: {data.current.humidity}%
+                      <div className="text-2xl -mt-8 ml-8 ">
+                        Humidity: {data.current.humidity}% <div> Feels like:{data.current.feelslike_c}°C</div>
+
                       </div>
-                      <div className="flex flex-col">
-                        <div className="text-2xl mt-14 -ml-40">
-                          Feels like:{data.current.feelslike_c}°C
-                        </div>
-                      </div>
+                     
                     </div>
                   </div>
 
@@ -200,7 +197,7 @@ function App() {
                       </button>
                     </div>
                   </div>
-                  <div className="text-8xl mt-36">
+                  <div className="text-5xl mt-36">
                     <div className="">GOOD {time}</div>
                     <div className="items-center justify-center flex">
                       MY FRIEND
