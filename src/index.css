@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 @media (max-width: 1023px) {
-    .hidden-mobile {
+    .hidden-small {
       display: none;
     }
   }
@@ -20,6 +20,12 @@
       display: none
     }
   }
+
+@media (max-width:426px) {
+    .hidden-mobile {
+      display: none;
+    }
+}
 
   * {
     font-family: 'Noto Sans Mono', monospace;
