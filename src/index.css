@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,4 +12,8 @@
     .hidden-pc {
       display: none
     }
+  }
+
+  * {
+    font-family: 'Noto Sans Mono', monospace;
   }
