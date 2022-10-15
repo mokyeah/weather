@@ -88,9 +88,9 @@ function App() {
               </div>
               <div className="text-1xl p-2"></div>
 
-              <div className="text-center text-4xl mt-16">
-                {data.location.name}
-              </div>
+                <div className="text-center text-4xl mt-16">
+                  {data.location.name}
+                </div>
               <div className="text-1xl mt- text-center">
                 {data.location.country}
               </div>
@@ -210,12 +210,47 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="">
-            
-            <div className=" h-screen w-full flex items-center justify-center">
-              <div className="text-5xl justify-center "></div>
-            </div>
-          </div>
+          
+        </div>
+        <div className="bg-zinc-800 h-screen w-full flex flex-col   hidden-big text-slate-50">
+          <div className=" items-center justify-center flex p-10">
+        <div className=" bg-gray-50  justify-center flex rounded-md">
+                      <button className="focus:bg-white focus:border-indigo-600 flex  items-center ">
+                        <div className=" rounded-md bg-gray-50  flex justify-center items-center">
+                          <Icon
+                            className=" w-6 h-6 my-auto text-gray-400 left-3"
+                            icon="ant-design:search-outlined"
+                          />
+                        </div>
+                        <input
+                          value={name}
+                          onChange={(e) => {
+                            settype(e.target.value);
+                          }}
+                          type="text"
+                          placeholder="Search"
+                          className="w-full h-12  text-gray-500 rounded-md outline-none bg-gray-50 "
+                        />
+                      </button>
+                    </div>
+                    </div>
+                    <div className="flex flex-col">
+                    <div className="justify-center flex text-3xl  xl p-12 pb-8">
+                    {data.location.name} 
+
+                    </div>
+                    <div className="justify-center text-1xl  flex">
+                    {data.location.country}
+                    </div>
+                    <div className="flex flex-row justify-center p-12 items-center ">
+                      <img
+                        className="w-28 h-28  "
+                        src={data.current.condition.icon}
+                      ></img></div>
+                      <div className="text-3xl  justify-center flex  ">
+                  {data.current.condition.text}
+                </div>
+                    </div>
         </div>
       </div>
     )

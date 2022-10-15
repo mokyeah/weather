@@ -21,6 +21,12 @@
     }
   }
 
+@media (min-width: 426px) {
+  .hidden-big {
+    display: none
+  }
+}
+
 @media (max-width:426px) {
     .hidden-mobile {
       display: none;
