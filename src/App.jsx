@@ -37,13 +37,12 @@ function App() {
   });
 
   const [search, setSearch] = useState(
-    "https://api.weatherapi.com/v1/search.json?key=99dcc937cc0c4c0c80662236220110&q=Malaysia"
   );
   const [weather1, setWeather1] = useState(
-    `https://api.weatherapi.com/v1/current.json?key=99dcc937cc0c4c0c80662236220110&q=Malaysia&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=8a00824ae77d4575bb821930221510&q=Malaysia&aqi=no`
   );
   const [weather2, setWeather2] = useState(
-    `https://api.weatherapi.com/v1/forecast.json?key=99dcc937cc0c4c0c80662236220110&q=Malaysia&days=5&aqi=no&alerts=no`
+    `https://api.weatherapi.com/v1/forecast.json?key=8a00824ae77d4575bb821930221510&q=Malaysia&days=5&aqi=no&alerts=no`
   );
   useEffect(() => {
     axios(weather1).then((e) => {
@@ -57,21 +56,21 @@ function App() {
   }, [weather2]);
   useEffect(() => {
     axios(
-      `https://api.weatherapi.com/v1/current.json?key=99dcc937cc0c4c0c80662236220110&q=${name}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=8a00824ae77d4575bb821930221510&q=${name}&aqi=no`
     ).then((e) => {
       setdata(e.data);
     });
   }, [name]);
   useEffect(() => {
     axios(
-      `https://api.weatherapi.com/v1/forecast.json?key=99dcc937cc0c4c0c80662236220110&q=${name}&days=5&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=8a00824ae77d4575bb821930221510&q=${name}&days=5&aqi=no&alerts=no`
     ).then((e) => {
       setafter(e.data);
     });
   }, [name]);
   useEffect(() => {
     axios(
-      `https://api.weatherapi.com/v1/search.json?key=99dcc937cc0c4c0c80662236220110&q=${name}`
+      `https://api.weatherapi.com/v1/search.json?key=8a00824ae77d4575bb821930221510&q=${name}`
     ).then((e) => {
       setSearch(e.data);
     });
