@@ -33,6 +33,18 @@
     }
 }
 
+@media (max-width:321px) {
+  .hidden-supersmall {
+    display:none;
+  }
+}
+
+@media (min-width:321px) {
+  .hidden-superbig {
+    display:none;
+  }
+}
+
   * {
     font-family: 'Noto Sans Mono', monospace;
   }

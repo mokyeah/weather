@@ -235,7 +235,8 @@ function App() {
                     </div>
                     </div>
                     <div className="flex flex-col">
-                    <div className="justify-center flex text-3xl  xl p-12 pb-8">
+                      <div className="justify-center flex -p-12">{clock}</div>
+                    <div className="justify-center items-center flex text-3xl  p-12 pb-8">
                     {data.location.name} 
 
                     </div>
@@ -245,13 +246,29 @@ function App() {
                     <div className="flex flex-row justify-center p-12 items-center ">
                       <img
                         className="w-28 h-28  "
-                        src={data.current.condition.icon}
-                      ></img></div>
+                        src={data.current.condition.icon} 
+                      ></img><div className="text-4xl">{data.current.temp_c}°C</div></div>
                       <div className="text-3xl  justify-center flex  ">
                   {data.current.condition.text}
                 </div>
+                <div className="text-l justify-center flex p-3 gap-3 hidden-supersmall">
+                        Humidity: {data.current.humidity}%  <div className="gap-3">  Feels like:{data.current.feelslike_c}°C</div>
                     </div>
-        </div>
+                    <div className="text-l justify-center flex p-3 gap-3 hidden-superbig">
+                        Humidity: {data.current.humidity}%  
+                    </div>
+                    <div className="text-l justify-center flex  hidden-superbig ">  Feels like:{data.current.feelslike_c}°C</div>
+                    <div className="text-l p-3 hidden-supersmall">
+                    <div className="">Tomorrow: {after.forecast.forecastday[1].day.condition.text}</div>
+                    <div className="mt-2">{after.forecast.forecastday[2].date}: {after.forecast.forecastday[2].day.condition.text}</div>
+                    <div className="mt-2">{after.forecast.forecastday[3].date}: {after.forecast.forecastday[3].day.condition.text}</div>
+                    <div className="mt-2">{after.forecast.forecastday[4].date}: {after.forecast.forecastday[4].day.condition.text}</div>
+                    </div>
+                    <div className="text-2xl justify-center flex pt-12 hidden-supersmall">GOOD {time}</div></div>  
+
+                    <div className="text-2xl justify-center flex pt-12 hidden-superbig">GOOD {time}</div>
+                    <div className="text-m justify-center flex hidden-superbig">remember to take some rest!</div>
+        </div>      
       </div>
     )
   );
