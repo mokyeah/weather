@@ -192,7 +192,7 @@ function App() {
                           }}
                           type="text"
                           placeholder="Search"
-                          className="w-full h-12 w-96 text-gray-500 rounded-md outline-none bg-gray-50 "
+                          className="w-full h-12  text-gray-500 rounded-md outline-none bg-gray-50 "
                         />
                       </button>
                     </div>
@@ -213,7 +213,9 @@ function App() {
           <div className="hidden-pc">
             hi
             <div className=" h-screen w-full flex items-center justify-center">
-              <div className="text-5xl justify-center ">WORK IN PROGRESS</div>
+              <div className="text-5xl justify-center ">Phone screen :)</div>
+              <div className="text-3xl justify-center items-center flex">test2</div>
+              
             </div>
           </div>
         </div>
