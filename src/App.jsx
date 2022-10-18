@@ -80,7 +80,7 @@ function App() {
     data &&
     after && (
       <div>
-        <div className="bg-slate-800 h-[100vh] w-full flex flex-row items-center justify-center gap-4 gap-12 p-2 text-slate-50 ">
+        <div className="bg-slate-800 h-[100vh] w-full flex flex-row items-center justify-center hidden-mobile p-2 text-slate-50 ">
           <div className=" w-1/2 flex-col flex hidden-mobile bg-slate-800 h-[100vh] overflow-y-auto ">
             <div className="flex justify-center flex-col">
               <div className="text-5xl justify-center flex p-2  ">
@@ -88,9 +88,9 @@ function App() {
               </div>
               <div className="text-1xl p-2"></div>
 
-              <div className="text-center text-4xl mt-16">
-                {data.location.name}
-              </div>
+                <div className="text-center text-4xl mt-16">
+                  {data.location.name}
+                </div>
               <div className="text-1xl mt- text-center">
                 {data.location.country}
               </div>
@@ -106,7 +106,7 @@ function App() {
                         src={data.current.condition.icon}
                       ></img>
                       <div className=" text-6xl ">{data.current.temp_c}°C</div>
-                      <div className="text-2xl -mt-8 ml-8 ">
+                      <div className="text-2xl -mt-8 ml-8 hidden-small">
                         Humidity: {data.current.humidity}% <div> Feels like:{data.current.feelslike_c}°C</div>
 
                       </div>
@@ -192,7 +192,7 @@ function App() {
                           }}
                           type="text"
                           placeholder="Search"
-                          className="w-full h-12  text-gray-500 rounded-md outline-none bg-gray-50 "
+                          className="w-full h-12 w-96 text-gray-500 rounded-md outline-none bg-gray-50 "
                         />
                       </button>
                     </div>
@@ -213,9 +213,7 @@ function App() {
           <div className="hidden-pc">
             hi
             <div className=" h-screen w-full flex items-center justify-center">
-              <div className="text-5xl justify-center ">Phone screen :)</div>
-              <div className="text-3xl justify-center items-center flex">test2</div>
-              
+              <div className="text-5xl justify-center ">WORK IN PROGRESS</div>
             </div>
           </div>
         </div>
